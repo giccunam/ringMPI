@@ -1,11 +1,11 @@
 # ringMPI
-Example of a ring using MPI
+*Example of a ring using MPI*
 
 Dr. Victor De la Luz
 
 vdelaluz@enesmorelia.unam.mx
 
-License: GNU/GPL
+License: **GNU/GPL**
 
 The ring start in zero. For each step, the proc 0 insert a new value in the ring. After the ring is fullfilled the process continue closing the ring.
 
@@ -15,7 +15,6 @@ Receive value from (proc-1) -> The (proc) print their own oldvalue -> Send oldva
 
 The last proc sent their value to first proc to close the ring.
 
-
 There are two tricks:
 
 1) We need a dummy "send" from the last to the first processor at the first step. This dummy send is mandatory to start the ring and reduce the complexity of the code.
@@ -23,16 +22,19 @@ There are two tricks:
 2) The last processor send the "actual value" and not the "old value" to the first processor to close the ring with the actual value. 
 
 
-Compile:
+## Compile:
 
+```
 make
+```
 
-Run example:
+## Run example:
 
+```
 mpiexec -n 4 ./ring
+```
 
-
-Output*
+## Output*
 
 step	proc	value
 
